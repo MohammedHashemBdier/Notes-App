@@ -21,7 +21,7 @@ class NotesApp extends StatelessWidget {
           titleLarge: TextStyle(fontFamily: 'Poppins'),
         ),
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.blue,
+          seedColor: Colors.blueGrey,
         ),
       ),
       home: const NotesView(),

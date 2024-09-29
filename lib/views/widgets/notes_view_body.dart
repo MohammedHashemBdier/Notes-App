@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/views/widgets/note_item.dart';
 
 class NotesViewBody extends StatelessWidget {
   const NotesViewBody({
@@ -9,7 +10,7 @@ class NotesViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Column(
       children: [
-        Text('Notes'),
+        CustomNoteItem(),
       ],
     );
   }

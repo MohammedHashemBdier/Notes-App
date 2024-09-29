@@ -9,7 +9,7 @@ class NotesView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: notesViewAppBar(),
-      body: const NotesViewBody(),
+      body: const NotesListView(),
     );
   }
 }

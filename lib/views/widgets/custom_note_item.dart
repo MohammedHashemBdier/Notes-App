@@ -7,7 +7,10 @@ class CustomNoteItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.all(16),
+      margin: const EdgeInsets.symmetric(
+        vertical: 4,
+        horizontal: 16,
+      ),
       padding: const EdgeInsets.only(
         left: 16,
         right: 24,

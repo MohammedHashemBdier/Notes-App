@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:notes_app/views/widgets/add_note_bottom_sheet.dart';
-import 'package:notes_app/views/widgets/notes_view_app_bar.dart';
+import 'package:notes_app/views/widgets/custom_app_bar.dart';
+import 'package:notes_app/views/widgets/custom_app_bar_icon.dart';
 import 'package:notes_app/views/widgets/notes_list_view.dart';
 
 class NotesView extends StatelessWidget {
@@ -27,7 +28,13 @@ class NotesView extends StatelessWidget {
           color: Colors.blueGrey[100],
         ),
       ),
-      appBar: notesViewAppBar(),
+      appBar: customAppBar(
+        title: 'Notes',
+        actions: const CustomAppBarIcon(
+          icon: FontAwesomeIcons.magnifyingGlass,
+        ),
+        leading: null,
+      ),
       body: const NotesListView(),
     );
   }

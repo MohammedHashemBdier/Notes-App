@@ -16,7 +16,7 @@ class AddNoteBottomSheet extends StatelessWidget {
             Text(
               'Add Note',
               style: TextStyle(
-                fontSize: 20,
+                fontSize: 28,
                 fontWeight: FontWeight.bold,
                 color: Colors.blueGrey[100],
               ),
@@ -46,6 +46,7 @@ class AddNoteBottomSheet extends StatelessWidget {
                 ),
               ),
             ),
+            const SizedBox(height: 16),
           ],
         ),
       ),

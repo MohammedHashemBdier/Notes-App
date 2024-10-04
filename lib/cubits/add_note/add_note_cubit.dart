@@ -8,7 +8,7 @@ part 'add_note_state.dart';
 
 class AddNoteCubit extends Cubit<AddNoteState> {
   AddNoteCubit() : super(AddNoteInitial());
-
+  bool isLoading = false;
   addNote(NoteModel note) async {
     emit(
       AddNoteLoding(),
@@ -18,7 +18,7 @@ class AddNoteCubit extends Cubit<AddNoteState> {
       await notsBox.add(note);
       emit(
         AddNoteSuccess(
-          message: "Note has been added",
+          sMessage: "Note has been added",
         ),
       );
     } catch (e) {
@@ -27,7 +27,7 @@ class AddNoteCubit extends Cubit<AddNoteState> {
       );
       emit(
         AddNoteFailure(
-          message: "Failed to add note",
+          eMessage: "Failed to add note",
         ),
       );
     }

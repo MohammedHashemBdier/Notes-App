@@ -8,17 +8,17 @@ final class AddNoteInitial extends AddNoteState {}
 final class AddNoteLoding extends AddNoteState {}
 
 final class AddNoteSuccess extends AddNoteState {
-  final String message;
+  final String sMessage;
 
   AddNoteSuccess({
-    required this.message,
+    required this.sMessage,
   });
 }
 
 final class AddNoteFailure extends AddNoteState {
-  final String message;
+  final String eMessage;
 
   AddNoteFailure({
-    required this.message,
+    required this.eMessage,
   });
 }

@@ -23,7 +23,7 @@ class AddNoteCubit extends Cubit<AddNoteState> {
       );
     } catch (e) {
       debugPrint(
-        e.toString(),
+        "Expansion is : ${e.toString()}",
       );
       emit(
         AddNoteFailure(

@@ -5,32 +5,42 @@ class SimpleBlocObserver implements BlocObserver {
   @override
   void onChange(BlocBase bloc, Change change) {
     debugPrint(
-      "Change = $change",
+      "Change in ${bloc.runtimeType}: $change",
     );
   }
 
   @override
   void onClose(BlocBase bloc) {
-    // TODO: implement onClose
+    debugPrint(
+      "Close in ${bloc.runtimeType}",
+    );
   }
 
   @override
   void onCreate(BlocBase bloc) {
-    // TODO: implement onCreate
+    debugPrint(
+      "Create in ${bloc.runtimeType}",
+    );
   }
 
   @override
   void onError(BlocBase bloc, Object error, StackTrace stackTrace) {
-    // TODO: implement onError
+    debugPrint(
+      "Error in ${bloc.runtimeType}: $error\nStack Trace: $stackTrace",
+    );
   }
 
   @override
   void onEvent(Bloc bloc, Object? event) {
-    // TODO: implement onEvent
+    debugPrint(
+      "Event in ${bloc.runtimeType}: $event",
+    );
   }
 
   @override
   void onTransition(Bloc bloc, Transition transition) {
-    // TODO: implement onTransition
+    debugPrint(
+      "Transition in ${bloc.runtimeType}: $transition",
+    );
   }
 }

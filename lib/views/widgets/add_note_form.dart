@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/cubits/add_note/add_note_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
+import 'package:notes_app/views/widgets/custom_add_note_button.dart';
 import 'package:notes_app/views/widgets/custom_text_form_field.dart';
 
 class AddNoteForm extends StatefulWidget {
@@ -50,34 +51,28 @@ class _AddNoteFormState extends State<AddNoteForm> {
             },
           ),
           const SizedBox(height: 16),
-          ElevatedButton(
-            onPressed: () {
-              if (formKey.currentState!.validate()) {
-                formKey.currentState!.save();
-                NoteModel noteModel = NoteModel(
-                  title: title!,
-                  subTitle: subTitle!,
-                  color: Colors.blue.value,
-                  date: DateTime.now().toString(),
-                );
-                BlocProvider.of<AddNoteCubit>(context).addNote(
-                  noteModel,
-                );
-              } else {
-                autovalidateMode = AutovalidateMode.always;
-              }
+          BlocBuilder<AddNoteCubit, AddNoteState>(
+            builder: (context, state) {
+              return CustomAddNoteButton(
+                isLoading: state is AddNoteLoding ? true : false,
+                onPressed: () {
+                  if (formKey.currentState!.validate()) {
+                    formKey.currentState!.save();
+                    NoteModel noteModel = NoteModel(
+                      title: title!,
+                      subTitle: subTitle!,
+                      color: Colors.blue.value,
+                      date: DateTime.now().toString(),
+                    );
+                    BlocProvider.of<AddNoteCubit>(context).addNote(
+                      noteModel,
+                    );
+                  } else {
+                    autovalidateMode = AutovalidateMode.always;
+                  }
+                },
+              );
             },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.blueGrey[100],
-            ),
-            child: const Text(
-              'Add Note',
-              style: TextStyle(
-                color: Colors.blueGrey,
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
           ),
           const SizedBox(height: 16),
         ],

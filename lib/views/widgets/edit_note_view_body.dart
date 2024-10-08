@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/views/widgets/custom_text_form_field.dart';
 
-class EditNoteViewBody extends StatelessWidget {
+class EditNoteViewBody extends StatefulWidget {
   const EditNoteViewBody({super.key});
 
+  @override
+  State<EditNoteViewBody> createState() => _EditNoteViewBodyState();
+}
+
+class _EditNoteViewBodyState extends State<EditNoteViewBody> {
   @override
   Widget build(BuildContext context) {
     return const Padding(

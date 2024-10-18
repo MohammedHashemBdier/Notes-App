@@ -4,8 +4,10 @@ class CustomAppBarIcon extends StatelessWidget {
   const CustomAppBarIcon({
     super.key,
     required this.icon,
+    this.onPressed,
   });
   final IconData icon;
+  final Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -18,10 +20,13 @@ class CustomAppBarIcon extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
         ),
         child: Center(
-          child: Icon(
-            icon,
+          child: IconButton(
+            icon: Icon(
+              icon,
+              size: 28,
+            ),
             color: Colors.blueGrey[100],
-            size: 28,
+            onPressed: onPressed,
           ),
         ),
       ),

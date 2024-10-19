@@ -4,7 +4,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:notes_app/cubits/nots_cubit/notes_cubit.dart';
 import 'package:notes_app/views/widgets/add_note_bottom_sheet.dart';
 import 'package:notes_app/views/widgets/custom_app_bar.dart';
-import 'package:notes_app/views/widgets/custom_app_bar_icon.dart';
 import 'package:notes_app/views/widgets/notes_list_view.dart';
 
 class NotesView extends StatefulWidget {
@@ -45,9 +44,7 @@ class _NotesViewState extends State<NotesView> {
       ),
       appBar: customAppBar(
         title: 'Notes',
-        actions: const CustomAppBarIcon(
-          icon: FontAwesomeIcons.magnifyingGlass,
-        ),
+        actions: null,
         leading: null,
       ),
       body: const NotesListView(),
